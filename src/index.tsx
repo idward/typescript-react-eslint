@@ -1,5 +1,8 @@
-console.log('Hello,world!');
+import React from 'react';
+import { render } from 'react-dom';
+import App from './components/App';
+import { sum } from './foo';
 
-const a = [1, 2];
+render(<App message="World" />, document.getElementById('root'));
 
-a.push(3);
+console.log(sum(1, 2).toString());
