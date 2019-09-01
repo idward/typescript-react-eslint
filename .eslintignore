@@ -2,3 +2,5 @@ src/serviceWorker.ts
 src/**/__tests__/**
 src/**/*.test.tsx
 webpack.config.js
+dist/**
+public/**

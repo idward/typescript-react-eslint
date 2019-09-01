@@ -6,9 +6,9 @@
     "lib": ["es6", "dom"],
     "sourceMap": true,
     "allowJs": true,
-    "jsx": "preserve",
+    "jsx": "react",
     "moduleResolution": "node",
-    "rootDir": "src",
+    "rootDirs": ["src", "server"],
     "forceConsistentCasingInFileNames": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,
@@ -26,15 +26,6 @@
     "isolatedModules": true,
     "noEmit": true
   },
-  "exclude": [
-    "node_modules", 
-    "build", 
-    "scripts", 
-    "config",
-    "acceptance-tests", 
-    "webpack", 
-    "jest", 
-    "src/setupTests.ts"
-  ],
-  "include": ["./src/*"]
+  "exclude": ["node_modules", "build", "scripts", "public", "dist"],
+  "include": ["**/*.ts", "**/*.tsx", "**/*.js"]
 }

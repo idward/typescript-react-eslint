@@ -1,8 +1,11 @@
 import React from 'react';
 import { render } from 'react-dom';
 import App from './components/App';
-import { sum } from './foo';
+
+declare let module: any;
 
 render(<App message="World" />, document.getElementById('root'));
 
-console.log(sum(1, 2).toString());
+if (module.hot) {
+  module.hot.accept();
+}

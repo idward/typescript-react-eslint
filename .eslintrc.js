@@ -27,15 +27,15 @@ module.exports = {
   },
   plugins: ['react', 'prettier', '@typescript-eslint', 'react-hooks'],
   rules: {
-    'prettier/prettier': ['error'],
+    // 'prettier/prettier': ['error'],
     semi: 0,
     eqeqeq: [1, 'always'],
     quotes: [1, 'single'],
     'jsx-quotes': [2, 'prefer-double'],
     'no-undef': 0,
-    'no-console': process.env === 'production' ? 1: 0,
+    'no-console': process.env === 'production' ? 1 : 0,
     'no-debugger': process.env === 'production' ? 1 : 0,
-    'no-unused-vars': 0,
+    'no-unused-vars': 1,
     'no-mixed-operators': [
       1,
       {
@@ -131,6 +131,7 @@ module.exports = {
     '@typescript-eslint/explicit-member-accessibility': 0,
     '@typescript-eslint/no-angle-bracket-type-assertion': 0,
     '@typescript-eslint/interface-name-prefix': 0,
+    '@typescript-eslint/no-var-requires': 0,
     // TODO: enable the lines below when refactoring
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
