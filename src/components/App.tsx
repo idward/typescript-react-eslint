@@ -1,24 +1,38 @@
 import React from 'react';
-import Button from 'antd/lib/button';
+import { Switch, Route, Link } from 'react-router-dom';
 import 'antd/lib/button/style/css';
-import Wow from './Wow';
-import style from '../index.css';
+import Loadable from 'react-loadable';
+// import Wow from './Wow';
 
-interface IAppProps {
-  message: string;
+export interface IAppProps {
+  message?: string;
 }
+
+const LoadableWow = Loadable({
+  loader: () => import(/* webpackChunkName: "Wow", webpackPrefetch:true */ './Wow'),
+  loading: () => <div>Loading</div>,
+});
 
 const a = [1, 3, 5];
 console.log(a);
 
+const LoadableHome = Loadable({
+  loader: () => import(/* webpackChunkName:"Home" */ './Home'),
+  loading: () => <div>Loading</div>,
+});
+
 const App = ({ message }: IAppProps) => {
-  console.log('aaaaa');
+  console.log(message + '111');
 
   return (
     <div className="container">
-      <h1 className={style.titleC}>Hello11 {message}</h1>
-      <Button type="primary">Test</Button>
-      <Wow />
+      <Link to="/">Home</Link> |<Link to="/wow">Wow</Link>
+      <Switch>
+        <Route path="/" exact component={LoadableHome} />
+        <Route path="/wow" component={LoadableWow} />
+      </Switch>
+      {/* <LoadableWow /> */}
+      {/* <Wow /> */}
     </div>
   );
 };

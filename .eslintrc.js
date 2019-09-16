@@ -21,7 +21,7 @@ module.exports = {
     ecmaFeatures: {
       jsx: true,
     },
-    project: './tsconfig.json',
+    // project: './tsconfig.json',
     ecmaVersion: 2018,
     sourceType: 'module',
   },
@@ -35,20 +35,26 @@ module.exports = {
     'no-undef': 0,
     'no-console': process.env === 'production' ? 1 : 0,
     'no-debugger': process.env === 'production' ? 1 : 0,
-    'no-unused-vars': 1,
+    // 'no-unused-vars': [
+    //   'warn',
+    //   {
+    //     argsIgnorePattern: '^_',
+    //   },
+    // ],
     'no-mixed-operators': [
       1,
       {
         allowSamePrecedence: true,
       },
     ],
+    'no-useless-constructor': 0,
     'eol-last': [2, 'always'],
     'no-confusing-arrow': 0,
     'arrow-parens': [2, 'as-needed'],
     'arrow-spacing': ['error', { before: true, after: true }],
     'arrow-body-style': [2, 'as-needed'],
     'no-extra-parens': [
-      'warn',
+      0,
       'all',
       {
         conditionalAssign: false,
@@ -65,6 +71,10 @@ module.exports = {
     'no-unused-expressions': 0,
     'arrow-body-style': 0,
     'newline-before-return': 1,
+    'max-classes-per-file': 0,
+    'class-methods-use-this': 0,
+    'lines-between-class-members': 0,
+    'global-require': 0,
     // "dot-notation": 0,
 
     'import/prefer-default-export': 0,
@@ -102,7 +112,10 @@ module.exports = {
     'react/jsx-indent': 0,
     'react/jsx-boolean-value': 0,
     'react/jsx-closing-tag-location': 0,
-    'react/jsx-closing-bracket-location': [2, { selfClosing: 'props-aligned', nonEmpty: 'after-props' }],
+    'react/jsx-closing-bracket-location': [
+      2,
+      { selfClosing: 'props-aligned', nonEmpty: 'after-props' },
+    ],
     'react/button-has-type': 0,
     'react/prop-types': 0,
     'react/button-has-type': 0,
@@ -125,13 +138,20 @@ module.exports = {
     '@typescript-eslint/no-non-null-assertion': 0,
     '@typescript-eslint/no-use-before-define': 0,
     '@typescript-eslint/member-delimiter-style': 0,
-    '@typescript-eslint/no-unused-vars': 0,
+    '@typescript-eslint/no-unused-vars': [
+      'warn',
+      {
+        argsIgnorePattern: '^_',
+      },
+    ],
     '@typescript-eslint/no-use-before-define': 0,
     '@typescript-eslint/no-explicit-any': 0,
     '@typescript-eslint/explicit-member-accessibility': 0,
     '@typescript-eslint/no-angle-bracket-type-assertion': 0,
     '@typescript-eslint/interface-name-prefix': 0,
     '@typescript-eslint/no-var-requires': 0,
+    '@typescript-eslint/no-require-imports': 0,
+    '@typescript-eslint/consistent-type-assertions': 0,
     // TODO: enable the lines below when refactoring
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',

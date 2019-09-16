@@ -26,7 +26,7 @@ app.use(
 // webpackHotMiddleware
 app.use(webpackHotMiddleware(compiler));
 
-app.get('/', (req, res) => {
+app.get('**', (req, res) => {
   console.log('url', req.url);
   res.sendFile(path.resolve(__dirname, '../dist', 'index.html'));
 });
